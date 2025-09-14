@@ -269,9 +269,9 @@ async def on_create_activity(ctx: Context):
 
     if delay and message and sender_actor:
         asyncio.create_task(send_reminder(ctx, delay, message, sender_actor, note)) # type: ignore
-        reply_content = f"<p>✅ OK! I'll remind you in {time_str}.</p>"
+        reply_content = f"<p>I'll remind you in {time_str}.</p>"
     else:
-        reply_content = "<p>🤔 Sorry, I didn't understand. Use format: <code>@reminder [time] [message]</code>.</p><p>Example: <code>@reminder 10m Check the oven</code></p>"
+        reply_content = "<p>Invalid format. Use format: <code>@reminder [time] [message]</code>.</p><p>Example: <code>@reminder 10m Check the oven</code></p>"
 
     reply_note = Note(
         id=f"https://{HOST}/notes/{uuid.uuid4()}",
