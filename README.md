@@ -1,0 +1,2 @@
+# activitypub-reminder-bot
+ActivityPubで一定時間後にリマインドするだけのBotを作る
